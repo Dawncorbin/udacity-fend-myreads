@@ -2,13 +2,14 @@ import React, {Component} from 'react'
 
 class BookCase extends Component {
   state = {
-    
+
   }
 
 render() {
     return (
       <div className="app">
         {this.state.showSearchPage ? (
+          //Search
           <div className="search-books">
             <div className="search-books-bar">
               <button className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</button>
@@ -29,6 +30,7 @@ render() {
               <ol className="books-grid"></ol>
             </div>
           </div>
+          //End Search
         ) : (
           <div className="list-books">
             <div className="list-books-title">
@@ -36,10 +38,12 @@ render() {
             </div>
             <div className="list-books-content">
               <div>
+              {/*<BookShelf/>*/}
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Currently Reading</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
+                    {/*<Book />*/}
                       <li>
                         <div className="book">
                           <div className="book-top">
@@ -58,6 +62,8 @@ render() {
                           <div className="book-authors">Harper Lee</div>
                         </div>
                       </li>
+                      {/*<End Book />*/}
+                      {/*<Book />*/}
                       <li>
                         <div className="book">
                           <div className="book-top">
@@ -76,13 +82,17 @@ render() {
                           <div className="book-authors">Orson Scott Card</div>
                         </div>
                       </li>
+                      {/*<End Book />*/}
                     </ol>
                   </div>
                 </div>
+                {/*<End BookShelf /> */}
+                {/*<BookShelf /> */}
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Want to Read</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
+                    {/*<Book />*/}
                       <li>
                         <div className="book">
                           <div className="book-top">
@@ -101,6 +111,8 @@ render() {
                           <div className="book-authors">David McCullough</div>
                         </div>
                       </li>
+                      {/*<End Book />*/}
+                      {/*<Book />*/}
                       <li>
                         <div className="book">
                           <div className="book-top">
@@ -119,13 +131,17 @@ render() {
                           <div className="book-authors">J.K. Rowling</div>
                         </div>
                       </li>
+                      {/*<End Book />*/}
                     </ol>
                   </div>
                 </div>
+                {/* <End BookShelf /> */}
+                {/*<BookShelf />*/}
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Read</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
+                    {/*<Book />*/}
                       <li>
                         <div className="book">
                           <div className="book-top">
@@ -144,6 +160,8 @@ render() {
                           <div className="book-authors">J.R.R. Tolkien</div>
                         </div>
                       </li>
+                      {/*<End Book />*/}
+                      {/*<Book />*/}
                       <li>
                         <div className="book">
                           <div className="book-top">
@@ -162,6 +180,8 @@ render() {
                           <div className="book-authors">Seuss</div>
                         </div>
                       </li>
+                      {/*<End Book />*/}
+                      {/*<Book />*/}
                       <li>
                         <div className="book">
                           <div className="book-top">
@@ -180,9 +200,11 @@ render() {
                           <div className="book-authors">Mark Twain</div>
                         </div>
                       </li>
+                      {/*<End Book />*/}
                     </ol>
                   </div>
                 </div>
+                {/*<End BookShelf />*/}
               </div>
             </div>
             <div className="open-search">
