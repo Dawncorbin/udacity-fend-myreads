@@ -1,7 +1,11 @@
 import React from 'react'
+import {Switch,Route} from 'react-router-dom'
 // import * as BooksAPI from './BooksAPI'
-import './App.css'
+
 import BookCase from './components/BookCase';
+import Search from './components/Search.js';
+
+import './App.css';
 
 class BooksApp extends React.Component {
   state = {
@@ -16,7 +20,13 @@ class BooksApp extends React.Component {
 
   render() {
     return (
-      <BookCase />
+      <div className="app">
+      <Switch>
+        <Route exact to={"/"} component={BookCase}/>
+        <Route exact to={"/Search"} component={Search}/>
+      </Switch>
+      </div>
+      //<BookCase />
     )
   }
 }
