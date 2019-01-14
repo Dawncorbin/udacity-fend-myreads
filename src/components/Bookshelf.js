@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import Book from "./Book";
+import Books from "./Books";
 
 
 
@@ -13,7 +13,7 @@ class BookShelf extends Component {
         <h2 className="bookshelf-title">Currently Reading</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
-          <Book />
+            <Books />
           </ol>
         </div>
       </div>
