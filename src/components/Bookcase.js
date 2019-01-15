@@ -3,9 +3,7 @@ import React, {Component} from 'react'
 import BookShelf from "./BookShelf";
 
 class BookCase extends Component {
-  state = {
 
-  }
 
 render() {
     return (
