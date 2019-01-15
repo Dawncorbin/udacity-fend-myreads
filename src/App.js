@@ -22,8 +22,8 @@ class BooksApp extends React.Component {
     return (
       <div className="app">
       <Switch>
-        <Route exact to={"/"} component={BookCase}/>
-        <Route exact to={"/Search"} component={Search}/>
+        <Route exact path={"/"} component={BookCase}/>
+        <Route exact path={"/Search"} component={Search}/>
       </Switch>
       </div>
       //<BookCase />
