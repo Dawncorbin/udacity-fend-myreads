@@ -16,9 +16,11 @@ render() {
               <h1>MyReads</h1>
             </div>
             <div className="list-books-content">
-              <div>
-                  <BookShelf />
-              </div>
+
+                  <BookShelf title="Currenty Reading" />
+                  <BookShelf title="want To Read"/>
+                  <BookShelf title="Read"/>
+
             </div>
             <div className="open-search">
               <button onClick={() => this.setState({ showSearchPage: true })}>Add a book</button>
