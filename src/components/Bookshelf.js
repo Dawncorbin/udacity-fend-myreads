@@ -2,10 +2,7 @@ import React, {Component} from 'react'
 
 import Book from "./Book";
 
-
-
 class BookShelf extends Component {
-
 
   render() {
 
@@ -14,13 +11,19 @@ class BookShelf extends Component {
         <h2 className="bookshelf-title">{this.props.name}</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
-          
-
-                      <Book/>
+            {this.props
+                 .shelf
+                 .books
+                 .map(book => (
+                    <li key={book.id}>
+                      <Book
+                        book={book}
+                        onChangeShelf={this.props.onChangeShelf}/>
+                    </li>
+                 ))}
           </ol>
         </div>
       </div>
-
     )
   }
 }
