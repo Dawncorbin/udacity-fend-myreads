@@ -3,28 +3,27 @@ import React, {Component} from 'react'
 import Book from "./Book";
 
 class BookShelf extends Component {
+  state = {}
 
   render() {
-
+    const { books, refreshAllBooks } = this.props;
     return (
+
       <div className="bookshelf">
-        <h2 className="bookshelf-title">{this.props.name}</h2>
+        <h2 className="bookshelf-title">Currently Reading</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
-            {this.props
-                 .shelf
-                 .books
-                 .map(book => (
-                    <li key={book.id}>
-                      <Book
-                        book={book}
-                        onChangeShelf={this.props.onChangeShelf}/>
-                    </li>
+          {/*map each book*/}
+            {books.map(book => (
+                  <Book refreshAllBooks={refreshAllBooks}
+                    book={book}
+                    key={book.id}
+                    />
                  ))}
           </ol>
         </div>
       </div>
-    )
+    );
   }
 }
 

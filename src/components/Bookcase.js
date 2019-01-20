@@ -6,26 +6,37 @@ class BookCase extends Component {
 
 
 render() {
+  const books = this.props.books;
     return (
-      <div className="app">
-
           <div className="list-books">
             <div className="list-books-title">
               <h1>MyReads</h1>
             </div>
             <div className="list-books-content">
+              <div>
+                  <BookShelf
+                      books={books.filter(book => book.shelf === "currentlyReading")}
+                      name="Currenty Reading"
+                      refreshAllBooks={this.props.refreshAllBooks}
+                  />
 
-                  <BookShelf title="Currenty Reading" />
-                  <BookShelf title="want To Read"/>
-                  <BookShelf title="Read"/>
+                  <BookShelf
+                     books={books.filter(book => book.shelf === "wantToRead")}
+                     name="Want To Read"
+                     refreshAllBooks={this.props.refreshAllBooks}
+                  />
 
+                  <BookShelf
+                     books={books.filter(book => book.shelf === "read")}
+                     name="Read"
+                     refreshAllBooks={this.props.refreshAllBooks}
+                  />
+              </div>
             </div>
             <div className="open-search">
-              <button onClick={() => this.setState({ showSearchPage: true })}>Add a book</button>
+              <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
             </div>
           </div>
-
-      </div>
     )
   }
 }
