@@ -3,15 +3,14 @@ import React, {Component} from 'react'
 class MoveBooks extends Component {
 
   render() {
-    const { book, ChangeShelf } = this.props;
-    const { shelf } = book;
+    let book = this.props.book;
 
     return (
       <div className="book-shelf-changer">
         <select
           onChange={(e) =>
-          ChangeShelf(book,e.target.value)}
-          defaultValue={shelf}
+          this.props.refreshAllBooks(this.props.book, e.target.value)}
+          value={book.shelf || "none"}
           >
           <option value="move" disabled>Move to...</option>
           <option value="currentlyReading">Currently Reading</option>
