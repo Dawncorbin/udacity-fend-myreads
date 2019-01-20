@@ -5,6 +5,8 @@ class Book extends Component {
   state = {}
 
   render() {
+    //Join the array of authors to create a single author string
+    const authors = this.props.book.authors && this.props.book.authors.join(' | ');
     return (
       <li>
         <div className="book">
@@ -18,7 +20,7 @@ class Book extends Component {
             <Search/>
           </div>
           <div className="book-title">{this.props.book.title}</div>
-          <div className="book-authors">Harper Lee</div>
+          <div className="book-authors">{authors}</div>
         </div>
       </li>
 
