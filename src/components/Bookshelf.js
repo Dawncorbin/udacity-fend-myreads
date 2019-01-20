@@ -15,7 +15,7 @@ class BookShelf extends Component {
           <ol className="books-grid">
           {/*map each book*/}
             {books.map(book => (
-                  <Book refreshAllBooks={refreshAllBooks}
+                  <Book refreshAllBooks={this.props.refreshAllBooks}
                     book={book}
                     key={book.id}
                     />

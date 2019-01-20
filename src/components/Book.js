@@ -10,7 +10,6 @@ class Book extends Component {
     const authors = this.props.book.authors && this.props.book.authors.join(' | ');
 
     return (
-
         <div className="book">
           <div className="book-top">
 
@@ -21,8 +20,6 @@ class Book extends Component {
                     height: 193,
                     backgroundImage: `url("${this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail : ""}")` }}>
               </div>
-          
-
             <Search/>
           </div>
           <div className="book-title">{this.props.book.title}</div>

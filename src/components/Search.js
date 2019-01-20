@@ -4,11 +4,14 @@ import * as BooksAPI from "../BooksAPI";
 import Book from "./Book";
 
 class Search extends Component {
-  state = {query: "", results: []
+  state = {
+    query: "",
+    results: []
 };
 
   searchQuery = query => {
-    this.setState({ query: query.trim() }, () => {
+    this.setState({
+      query: query.trim() }, () => {
       this.searchUpdate(this.state.query);
     });
 };
@@ -28,6 +31,7 @@ class Search extends Component {
                 }
                 return searchUpdate;
               });
+
               this.setState({ results: searchUpdate });
           } else {
             this.setState({ results: [] });
