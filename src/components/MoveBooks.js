@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 
 class MoveBooks extends Component {
+  state = {}
 
   render() {
     let book = this.props.book;

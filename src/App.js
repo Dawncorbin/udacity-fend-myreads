@@ -23,12 +23,11 @@ class BooksApp extends React.Component {
   refreshAllBooks = (book, shelf) => {
     {/*Get the books currently on the bookshelves and update the state with the sorted list*/}
     BooksAPI.update(book, shelf);
-    //  .then(() => {
+
     BooksAPI.getAll()
       .then(books => {
         this.setState({ books:books });
     });
-//  });
 }
 
   render() {
@@ -46,8 +45,8 @@ class BooksApp extends React.Component {
             />
       </div>
 
-    )
+    );
   }
-};
+}
 
 export default BooksApp
