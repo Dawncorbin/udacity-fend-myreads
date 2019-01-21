@@ -1,8 +1,5 @@
 import React, {Component} from 'react'
-import Search from "./Search";
-//import MoveBooks from "./MoveBooks";
-
-
+//import Search from "./Search";
 
 class Book extends Component {
   state = {}
@@ -37,9 +34,7 @@ class Book extends Component {
                     </div>
                     )
               </div>
-              
-              {/*<MoveBooks/>*/}
-            <Search/>
+          {/*  <Search/>*/}
           </div>
           <div className="book-title">{this.props.book.title}</div>
           <div className="book-authors">{authors}</div>
