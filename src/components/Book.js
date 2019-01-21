@@ -9,6 +9,7 @@ class Book extends Component {
     let book = this.props.book;
 
     return (
+      <li>
         <div className="book">
           <div className="book-top">
 
@@ -20,8 +21,9 @@ class Book extends Component {
                     backgroundImage: `url("${this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail : ""}")` }}>
                     <div className="book-shelf-changer">
                       <select
-                        onChange={(event) =>
-                        this.props.refreshAllBooks(this.props.book, event.target.value)}
+                        onChange={(event) => {this.props.refreshAllBooks(
+                          this.props.book, event.target.value
+                        )}}
                         value={book.shelf || "none"}
                         >
                         <option value="move" disabled>Move to...</option>
@@ -38,6 +40,7 @@ class Book extends Component {
           <div className="book-title">{this.props.book.title}</div>
           <div className="book-authors">{authors}</div>
         </div>
+        </li>
     );
   }
 }
