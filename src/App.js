@@ -1,10 +1,10 @@
 import React from 'react'
-import * as BooksAPI from './BooksAPI'
 import { Route } from "react-router-dom";
-import BookCase from './components/BookCase';
-import Search from './components/Search';
+import * as BooksAPI from './BooksAPI'
 
 import './App.css';
+import BookCase from './components/BookCase';
+import Search from './components/Search';
 
 class BooksApp extends React.Component {
   state = {
@@ -19,12 +19,14 @@ class BooksApp extends React.Component {
   }
 
   refreshAllBooks = (book, shelf) => {
-    BooksAPI.update(book, shelf);
+    BooksAPI.update(book, shelf).then(books => {
+      book.shelf = shelf;
 
     BooksAPI.getAll()
       .then(books => {
         this.setState({ books });
     });
+  });
 };
 
   render() {
