@@ -9,7 +9,6 @@ import './App.css';
 class BooksApp extends React.Component {
   state = {
     books: []
-
   };
 
 //Once the component has mounted call 'BooksAPI.getAll'
@@ -17,18 +16,16 @@ class BooksApp extends React.Component {
     BooksAPI.getAll().then((books) => {
       this.setState({ books });
     });
-
   }
 
   refreshAllBooks = (book, shelf) => {
-    {/*Get the books currently on the bookshelves and update the state with the sorted list*/}
     BooksAPI.update(book, shelf);
 
     BooksAPI.getAll()
       .then(books => {
         this.setState({ books:books });
     });
-}
+};
 
   render() {
     return (

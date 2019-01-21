@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 //import Search from "./Search";
 
 class Book extends Component {
-  state = {}
 
   render() {
     //Join the array of authors to create a single author string
@@ -21,8 +20,8 @@ class Book extends Component {
                     backgroundImage: `url("${this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail : ""}")` }}>
                     <div className="book-shelf-changer">
                       <select
-                        onChange={(e) =>
-                        this.props.refreshAllBooks(this.props.book, e.target.value)}
+                        onChange={(event) =>
+                        this.props.refreshAllBooks(this.props.book, event.target.value)}
                         value={book.shelf || "none"}
                         >
                         <option value="move" disabled>Move to...</option>
@@ -32,15 +31,13 @@ class Book extends Component {
                         <option value="none">None</option>
                       </select>
                     </div>
-                    )
+
               </div>
           {/*  <Search/>*/}
           </div>
           <div className="book-title">{this.props.book.title}</div>
           <div className="book-authors">{authors}</div>
         </div>
-
-
     );
   }
 }
