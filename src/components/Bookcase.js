@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import { Link } from "react-router-dom";
-import BookShelf from "./BookShelf";
+import Bookshelf from "./Bookshelf";
 
-class BookCase extends Component {
+class Bookcase extends Component {
 
   render() {
     const books = this.props.books;
@@ -14,19 +14,19 @@ class BookCase extends Component {
 
               <div className="list-books-content">
                 <div>
-                    <BookShelf
+                    <Bookshelf
                         books={books.filter(book => book.shelf === "currentlyReading")}
                         name="Currenty Reading"
                         refreshAllBooks={this.props.refreshAllBooks}
                     />
 
-                    <BookShelf
+                    <Bookshelf
                        books={books.filter(book => book.shelf === "wantToRead")}
                        name="Want To Read"
                        refreshAllBooks={this.props.refreshAllBooks}
                     />
 
-                    <BookShelf
+                    <Bookshelf
                        books={books.filter(book => book.shelf === "read")}
                        name="Read"
                        refreshAllBooks={this.props.refreshAllBooks}
@@ -41,4 +41,4 @@ class BookCase extends Component {
     }
 }
 
-export default BookCase;
+export default Bookcase;

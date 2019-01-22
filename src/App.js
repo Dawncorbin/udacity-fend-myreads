@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import * as BooksAPI from './BooksAPI'
 
 import './App.css';
-import BookCase from './components/BookCase';
+import Bookcase from './components/Bookcase';
 import Search from './components/Search';
 
 class BooksApp extends React.Component {
@@ -34,7 +34,7 @@ class BooksApp extends React.Component {
       <div className="app">
         <Route exact path="/"
                 render={() => (
-                  <BookCase books={this.state.books} refreshAllBooks={this.refreshAllBooks} />
+                  <Bookcase books={this.state.books} refreshAllBooks={this.refreshAllBooks} />
                 )}
             />
         <Route exact path="/Search"
